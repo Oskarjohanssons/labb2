@@ -222,7 +222,6 @@ section {
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    background: var(--secound-bg-color);
     padding-bottom: 6rem;
 }
 
