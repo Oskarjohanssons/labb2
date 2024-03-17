@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Oskar.</a>
+        
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="cv.html" class="active">CV</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="cv" id="cv">
+        <div class="container">
+            <div class="top">
+                <div class="imgBx">
+                    <div class="box">
+                        <img src="/images/test.jpg" alt="profilbild på mig">
+                    </div>
+                </div>
+                <div class="profileText">
+                    <h3>Oskar<br>Johansson<br><span>Creative 
+                    Designer</span></h3>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="leftSide">
+                    <h3>Kontakt Info</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"></span>
+                            <i class='bx bx-phone'></i>
+                            <span class="text">+46 72 350 53 72</span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            <i class='bx bx-envelope' ></i>
+                            <span class="text">oskar.johanssons@hotmail.com</span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            <i class='bx bx-home' ></i>
+                            <span class="text">Varberg, Sweden</span>
+                        </li>
+                    </ul>
+                    <h3>Utbildning</h3>
+                    <ul class="education"></ul>
+                    <h3>Språk</h3>
+                    <ul class="language">
+                        <li>
+                            <span class="text">Svenska</span>
+                            <span class="percent">
+                                <div style="width: 100%;"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Engelska</span>
+                            <span class="percent">
+                                <div style="width: 90%;"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Tyska</span>
+                            <span class="percent">
+                                <div style="width: 20%;"></div>
+                            </span>
+                        </li>
+                    </ul>
+                    <h3>Intressen</h3>
+                    <ul class="interest">
+                        <li><span class="icon"><i class='bx bx-medal' ></i></span>Brottning</li>
+                        <li><span class="icon"><i class='bx bx-code'></i></span>Programmering</li>
+                        <li><span class="icon"><i class='bx bx-tennis-ball' ></i></span>Paddel</li>
+                        <li><span class="icon"><i class='bx bx-bowl-hot' ></i></span>Matlagning</li>
+                    </ul>
+                </div>
+                <div class="rightSide">
+                    <div class="rightSide">
+                        <div>
+                            <h3>Profile</h3>
+                            <p>En engagerad och målinriktad student som är entusiastisk att skaffa erfarenhet inom programmering och mjukvaruutveckling.<br>
+                                Mitt mål är att förbättra mina färdigheter och bidra till dom projekten som jag blir tilldelad som en del av ert team.<br><br>
+                                Jag skulle gärna vilja få möjligheten att utveckla mina kompetenser och lära mig från era erfarna utvecklare under min praktik.<br>
+                                Ser fram emot att höra från er så att jag kan berätta mer om mig själv och varför jag vill ha min fösta praktik hos er mellan perioden 4 november 2024 till 21 februari 2025.</p>
+                        </div>
+                        <div>
+                    <h3>Erfarenhet</h3>
+                    <div class="experiences"></div>
+                    <div class="skills">
+                        <h3>Professional Skills</h3>
+                        <div class="box">
+                            <h4>Html</h4>
+                            <span class="percent">
+                                <div style="width: 60%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>CSS</h4>
+                            <span class="percent">
+                                <div style="width: 80%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>C#</h4>
+                            <span class="percent">
+                                <div style="width: 50%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>Java Script</h4>
+                            <span class="percent">
+                                <div style="width: 30%;"></div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        fetch('cv_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const educationList = document.querySelector('.education');
+                data.utbildningar.forEach(utbildning => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <h5>${utbildning.period}</h5>
+                        <h4>${utbildning.titel}</h4>
+                        <h6>${utbildning.skola}</h6>
+                    `;
+                    educationList.appendChild(listItem);
+                });
+
+                const experienceList = document.querySelector('.experiences');
+                data.erfarenheter.forEach(erfarenhet => {
+                    const experienceBox = document.createElement('div');
+                    experienceBox.classList.add('box');
+
+                    experienceBox.innerHTML = `
+                        <div class="year_company">
+                            <h5>${erfarenhet.period}</h5>
+                            <h5>${erfarenhet.företag}</h5>
+                        </div>
+                        <div class="text">
+                            <h4>${erfarenhet.titel}</h4>
+                            <p>${erfarenhet.beskrivning}</p>
+                        </div>
+                    `;
+                    experienceList.appendChild(experienceBox);
+                });
+            });
+    </script>
+
+<!-- Easter eggs -->
+<div>
+    <!-- Modal-popup -->
+    <div id="eastereggModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Grattis! du hittade första "Easter-Egget" kan du hitta ett till????</p>
+        </div>
+    </div>
+    <script>
+        // modal
+        let keySequence = '';
+        const eastereggModal = document.getElementById('eastereggModal');
+        document.addEventListener('keydown', function(event) {
+            keySequence += event.key;
+            if (keySequence === '1337') {
+                eastereggModal.style.display = 'block';
+            }
+        });
+
+        document.querySelector('.close').addEventListener('click', function() {
+            eastereggModal.style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const portrait = document.querySelector('.box img');
+            portrait.addEventListener('click', function() {
+                document.body.style.backgroundColor = 'pink';
+            });
+        });
+
+    </script> 
+</div>
+
+<!--Footer design-->
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2024 by Oskar Johansson | All Rights Reserved</p>
+    </div>
+    <div class="footer-iconTop">
+        <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

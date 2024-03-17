@@ -222,7 +222,7 @@ section {
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    background: var(--secound-bg-color);
+    background: var(--bg-color);
     padding-bottom: 6rem;
 }
 
@@ -252,20 +252,6 @@ span {
     border: .2rem solid var(--main-color);
 }
 
-.about-img .circle-spin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0);
-    width: 80%;
-    height: 100%;
-    border-radius: 50%;
-    border-top: .2rem solid var(--secound-bg-color);
-    border-bottom: .2rem solid var(--secound-bg-color);
-    border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color);
-}
-
 .about-content {
     text-align: center;
 }
@@ -289,8 +275,6 @@ span {
 }
 
 .cv{
-    background: var(--bg-color);
-    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -320,6 +304,7 @@ span {
     width: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .cv .container .top .imgBx .box {
@@ -434,7 +419,7 @@ span {
 
 .cv .language .percent {
     position: relative;
-    width: 100%;
+    width: 50%;
     background: #e3e3e3;
     height: 6px;
     margin-top: 15px;
@@ -485,30 +470,30 @@ span {
 }
 
 .cv p {
-    font-style: 300;
+    color: #333
 }
 
 .cv .rightSide {
     padding-left: 40px;
 }
 
-.cv .about .box {
+.cv {
     display: flex;
     flex-direction: row;
     margin: 20px 0;
 }
 
-.cv .about .box .year_company {
+.cv.box .year_company {
     min-width: 150px;
     margin-bottom: 10px;
 }
 
-.cv .about .box .year_company h5 {
+.cv .box .year_company h5 {
     color: #333;
     font-weight: 600;
 }
 
-.cv .about .box .year_company h5:nth-child(1) {
+.cv .box .year_company h5:nth-child(1) {
     color: #3590d2;
 }
 
@@ -518,7 +503,7 @@ span {
     margin: 0;
 }
 
-.cv .about.skills .box {
+.cv .skills .box {
     position: relative;
     width: 100%;
     display: grid;
@@ -527,20 +512,20 @@ span {
     align-items: center;
 }
 
-.cv .about.skills .box h4 {
+.cv .skills .box h4 {
     color: #333;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
-.cv .about.skills .box .percent {
+.cv .skills .box .percent {
     position: relative;
     width: 100%;
     height: 10px;
     background: #e3e3e3;
 }
 
-.cv .about.skills .box .percent div {
+.cv .skills .box .percent div {
     position: absolute;
     top: 0;
     left: 0;
@@ -549,12 +534,163 @@ span {
 }
 
 .portfolio {
-    background: var(--secound-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.portfolio .project {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secound-bg-color);
+    position: relative;
+}
+
+.portfolio .project h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.portfolio .project h3 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.portfolio .project .project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.portfolio .project .project-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.portfolio .project .project-content .btn {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.portfolio .project .project-content .btn:hover {
+    background-color: darken(var(--main-color), 10%);
+}
+
+.portfolio .project .github-btn {
+    background-color: #181717;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.portfolio .project .github-btn:hover {
+    background-color: #000000;
+}
+
+.portfolio .project .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.portfolio .project .modal-content {
+    background-color: var(--bg-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 1rem;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.portfolio .project .modal-content h2 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.portfolio .project .modal-content p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.portfolio .project .modal-content .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.portfolio .project h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.portfolio .project h1 span {
+    color: var(--main-color);
+}
+
+.portfolio .project h1 a {
+    color: var(--text-color);
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio .project h1 a:hover {
+    background-color: darken(var(--main-color), 10%);
+}
+
+
 .contact {
-    min-height: auto;
-    padding-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contact .footer {
+    margin-top: auto;
 }
 
 .contact form {
@@ -625,6 +761,7 @@ span {
     cursor: pointer;
 }
 
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -675,4 +812,98 @@ span {
 
 .footer-iconTop a:hover i {
     color: var(--main-color);
+}
+
+.odd-element {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 9999;
+    display: none; 
+}
+
+.udda-del {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0f0; 
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 9999;
+    display: none; 
+}
+
+@media print {
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        color: var(--secound-bg-color);
+        background-color: var(--bg-color);
+    }
+
+}
+
+.modal-toggle {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: #333;
+    margin: 25% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-toggle:checked + .modal {
+    display: block;
+}
+
+.button {
+    background-color: #333;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.button, .close {
+    border: 1px solid #333;
+    box-sizing: border-box; 
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Oskar.</a>
+        
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="cv.html">CV</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!--About Section-->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+
+        <div class="about-img">
+            <img src="images/test.jpg" alt="">
+            <span class="circle-spin"></span>
+        </div>
+
+        <div class="about-content">
+            <h3>Fullstack Developer!</h3>
+            <p>Hej! Oskar Johansson heter jag och är för nuvarande en studerande systemutvecklare i Varberg.
+                En engagerad och målinriktad student som är entuastisk att skaffa erfarenhet inom programmering och mjukvaruutveckling.</p>
+
+            <div class="btn-box btns">
+                <a href="cv.html" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easter eggs -->
+    <div>
+        <!-- Modal-popup -->
+        <div id="eastereggModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Grattis! du hittade första "Easter-Egget" kan du hitta ett till????</p>
+            </div>
+        </div>
+        <script>
+            // modal
+            let keySequence = '';
+            const eastereggModal = document.getElementById('eastereggModal');
+            document.addEventListener('keydown', function(event) {
+                keySequence += event.key;
+                if (keySequence === '1337') {
+                    eastereggModal.style.display = 'block';
+                }
+            });
+            document.querySelector('.close').addEventListener('click', function() {
+                eastereggModal.style.display = 'none';
+            });
+        </script> 
+    </div>
+
+    <!--Footer design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Oskar Johansson | All Rights Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <div class="odd-element" id="odd-element-trigger">click me</div>
+    <div class="udda-del" id="udda-del-trigger">click me</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

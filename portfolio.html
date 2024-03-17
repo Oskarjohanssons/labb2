@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Oskar.</a>
+        
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="cv.html">CV</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+ <!--Portfolio Section-->
+ <section class="portfolio" id="portfolio">
+    <div class="project">
+        <h2>Min Portfolio</h2>
+        <h3>Individuellt projekt-bankomaten</h3>
+        <div class="project-content">
+            <img src="images/53cc9a41602ab5f52e6c9ac1257e9d2c.jpg" alt="">
+            <a href="#modal1" class="btn" data-modal="#modal1">Mer information</a>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close-button">&times;</a>
+                <h2>Mer information</h2>
+                <p>Detta program är en enkel konsolapplikation som ska likna en bankomat.
+                    Den innehåller funktioner för att logga in, visa konton och saldo, överföra pengar och ta ut pengar från olika konton. Den använder statiska arrayer för att lagra informationen om användare, pinkoder och kontosaldon.
+                    Användaren kan logga in och utföra olika bankrelaterade åtgärder.</p>
+            </div>
+        </div>
+        <h1><a href="https://github.com/Oskarjohanssons/Individuellt-projekt-Oskar-Johansson"><i class='bx bxl-github'></i></a></h1>
+    </div>
+    <div class="project">
+        <h3>Individuellt projekt-databasen</h3>
+        <div class="project-content">
+            <img src="images/gettyimages-157334670-612x612.jpg" alt="Bild på en databas diagram">
+            <a href="#modal2" class="btn" data-modal="#modal2">Mer information</a>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close-button">&times;</a>
+                <h2>Individuellt projekt-databasen</h2>
+                <p>Detta projekt är en individuell uppgift inom ramen för en databaskurs. Det syftar till att demonstrera kunskaper och färdigheter inom databashantering och tillämpning av olika koncept som normalisering och SQL-frågor.</p>
+            </div>
+        </div>
+        <h1><a href="https://github.com/Oskarjohanssons/Individuellt-databasprojekt"><i class='bx bxl-github'></i></a></h1>
+    </div>
+
+    <!-- Easter eggs -->
+    <div>
+        <!-- Modal-popup -->
+        <div id="eastereggModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Grattis! du hittade första "Easter-Egget" kan du hitta ett till????</p>
+            </div>
+        </div>
+        <script>
+            // modal
+            let keySequence = '';
+            const eastereggModal = document.getElementById('eastereggModal');
+            document.addEventListener('keydown', function(event) {
+                keySequence += event.key;
+                if (keySequence === '1337') {
+                    eastereggModal.style.display = 'block';
+                }
+            });
+            document.querySelector('.close').addEventListener('click', function() {
+                eastereggModal.style.display = 'none';
+            });
+        </script> 
+    </div>
+</section>
+
+
+    <!--Footer design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Oskar Johansson | All Rights Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <div class="odd-element" id="odd-element-trigger">click me</div>
+    <div class="udda-del" id="udda-del-trigger">click me</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

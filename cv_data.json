@@ -1,0 +1,46 @@
+{
+    "utbildningar": [
+      {
+        "period": "September 2023 - Pågående",
+        "titel": "Systemutvecklare .NET",
+        "skola": "Campus Varberg"
+      },
+      {
+        "period": "September 2017 - Juni 2019",
+        "titel": "VVS-ingenjör",
+        "skola": "Newton Göteborg"
+      },
+      {
+        "period": "Augusti 2012 - Juni 2015",
+        "titel": "Teknik",
+        "skola": "Peder Skrivares skola"
+      }
+    ],
+    "erfarenheter": [
+      {
+        "period": "Augusti 2019 - Tjänstledig",
+        "företag": "TQI Consult AB",
+        "titel": "VVS-ingenjör",
+        "beskrivning": "Designade och implementerar system med hjälp av Cad för värme,ventilation,sanitet samt energieffektivisering i byggnader."
+      },
+      {
+        "period": "Juni 2019 - Augusti 2019",
+        "företag": "SitSet AB",
+        "titel": "Läktarmontör",
+        "beskrivning": "Monterade och demonterade läktare."
+      },
+      {
+        "period": "Oktober 2016  -  Juni 2019",
+        "företag": "Bravida Sverige AB",
+        "titel": "Ventilationsmontör",
+        "beskrivning": "Höll på med installation, underhåll och reparation av ventilationssystem i olika typer av byggnader."
+      },
+      {
+        "period": "Augusti 2015 - Oktober 2016",
+        "företag": "Caverion Sverige AB",
+        "titel": "Ventilationsmontör",
+        "beskrivning": "Höll på med installation, underhåll och reparation av ventilationssystem i olika typer av byggnader samt kundkontakt när jag höll i egna byggen."
+      }
+    ]
+  }
+  
